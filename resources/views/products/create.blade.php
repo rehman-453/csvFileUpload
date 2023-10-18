@@ -2,7 +2,7 @@
   
 @section('content')
 <div class="row">
-    <div class="col-lg-12 margin-tb">
+    <div class="col-lg-12 margin-tb" style="padding:10px">
         <div class="pull-left">
             <h2>Add New CSV</h2>
         </div>

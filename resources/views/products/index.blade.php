@@ -2,12 +2,12 @@
  
 @section('content')
     <div class="row">
-        <div class="col-lg-12 margin-tb">
+        <div class="col-lg-12 margin-tb" style="padding: 10px;">
             <div class="pull-left">
                 <h2>CSV File Upload</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('create') }}"> Add New Product</a>
+                <a class="btn btn-success" href="{{ route('create') }}"> Add New CSV</a>
             </div>
         </div>
     </div>
@@ -29,18 +29,24 @@
         </tr>
         @foreach($products as $i => $row)
             <tr>
-                <td>{{$i+1}}</td>
-                <td>{{$row->prod_id}}</td>
+                <td class="text-center">{{++$i}}</td>
+                <td class="text-center">{{$row->prod_id}}</td>
                 <td>{{$row->name}}</td>
                 <td>Rs. {{$row->price}}</td>
                 <td>{{$row->description}}</td>
-                <td>
-                    <img src="{{$row->image}}" alt="{{$row->name}}" width="50" height="50">
+                <td class="text-center">
+                    @if($row->image)
+                        <img src="{{$row->image}}" alt="{{$row->name}}" width="50" height="50">
+                    @else
+                        N/A
+                    @endif
                 </td>
             </tr>
         @endforeach
         
     </table>
+
+
   
     
 @endsection

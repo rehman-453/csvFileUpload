@@ -58,7 +58,7 @@ class ProductController extends Controller
                 mkdir($savePath, 0777, true);
             }
 
-            $fileName = basename($url);
+            $fileName = time().'_'.basename($url);
             $filePath = $savePath . $fileName;
 
             $result = file_put_contents($filePath, $imageContent);
