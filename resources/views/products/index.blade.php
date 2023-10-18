@@ -35,7 +35,7 @@
                 <td>Rs. {{$row->price}}</td>
                 <td>{{$row->description}}</td>
                 <td class="text-center">
-                    @if($row->image)
+                    @if(isset($row->image))
                         <img src="{{$row->image}}" alt="{{$row->name}}" width="50" height="50">
                     @else
                         N/A

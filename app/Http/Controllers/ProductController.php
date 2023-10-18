@@ -10,6 +10,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::GetAllProducts();
+        var_dump($products);return;
         return view('products.index',compact('products'));
     }
 
@@ -51,7 +52,7 @@ class ProductController extends Controller
     public static function DownloadFile($url)
     {
         $savePath = 'public/uploads/images/';
-        $imageContent = file_get_contents($url);
+        $imageContent = ($url) ? file_get_contents($url) : '';
 
         if ($imageContent !== false) {
             if (!file_exists($savePath)) {
